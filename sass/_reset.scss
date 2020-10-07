@@ -48,6 +48,12 @@ select {
   font: inherit;
 }
 
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
