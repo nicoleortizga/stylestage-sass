@@ -2,16 +2,17 @@
   --pink: #e60067;
   --lighterPink: #fec7d7;
   --darkerPink: #de1b5c;
-  --darkerGreen: #2c5b4c;
-  --lighterGreen: #47cf73;
+  --darkerGreen: #1A6315;
+  --lighterGreen: #D2FBD0;
   --darkGrey: #222;
-  --white: #ffffff;
+  --light: #fffffe;
 
   --main: var(--pink);
-  --background: var(--white);
-  --navColor: var(--lighterGreen);
-  --textColor: var(--darkGrey);
+  --background: var(--light);
+  --nav-color: var(--lighterGreen);
+  --text-color: var(--darkGrey);
   --anchor: var(--darkGrey);
+  --anchor-hover: var(--darkerGreen);
 
   --font-family: "Karla", sans-serif;
   --font-size-h1: 3rem;

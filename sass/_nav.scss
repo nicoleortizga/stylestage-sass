@@ -1,8 +1,6 @@
 nav {
-  --anchor: var(--darkGrey);
-  --main: var(--white);
   grid-area: nav;
-  background-color: var(--navColor);
+  background-color: var(--nav-color);
 
   ul {
     margin: 0;

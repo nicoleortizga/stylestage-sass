@@ -3,7 +3,7 @@ body {
   grid-template-areas: "header header""nav nav""main main""aside1 aside2""footer footer";
   grid-template-columns: 1fr 1fr;
   background: var(--background);
-  color: var(--textColor);
+  color: var(--text-color);
   font-family: "Inconsolata", monospace;
   font-size: var(--font-size-text);
 }
@@ -31,8 +31,6 @@ article {
 }
 
 aside {
-  background: var(--lighterGreen);
-
   .container {
     padding: 1.5rem;
   }

@@ -3,15 +3,16 @@
   --pink: #e60067;
   --lighterPink: #fec7d7;
   --darkerPink: #de1b5c;
-  --darkerGreen: #2c5b4c;
-  --lighterGreen: #47cf73;
+  --darkerGreen: #1A6315;
+  --lighterGreen: #D2FBD0;
   --darkGrey: #222;
-  --white: #ffffff;
+  --light: #fffffe;
   --main: var(--pink);
-  --background: var(--white);
-  --navColor: var(--lighterGreen);
-  --textColor: var(--darkGrey);
+  --background: var(--light);
+  --nav-color: var(--lighterGreen);
+  --text-color: var(--darkGrey);
   --anchor: var(--darkGrey);
+  --anchor-hover: var(--darkerGreen);
   --font-family: "Karla", sans-serif;
   --font-size-h1: 3rem;
   --font-size-h2: 2rem;
@@ -129,26 +130,6 @@ h4 {
   font-size: var(--font-size-h4);
 }
 
-header a,
-nav a,
-main a,
-aside a,
-footer a {
-  text-decoration: none;
-  color: var(--darkGrey);
-  border-bottom: solid 2px var(--anchor);
-  transition: all 0.3s ease-in-out;
-}
-header a:not([class]):hover,
-nav a:not([class]):hover,
-main a:not([class]):hover,
-aside a:not([class]):hover,
-footer a:not([class]):hover {
-  color: var(--main);
-  border-bottom: none;
-  transition: transform 200ms ease 0s;
-}
-
 header h2 {
   font-size: calc(var(--font-size-h2) * 0.8);
 }
@@ -179,7 +160,7 @@ body {
   grid-template-areas: "header header" "nav nav" "main main" "aside1 aside2" "footer footer";
   grid-template-columns: 1fr 1fr;
   background: var(--background);
-  color: var(--textColor);
+  color: var(--text-color);
   font-family: "Inconsolata", monospace;
   font-size: var(--font-size-text);
 }
@@ -204,9 +185,6 @@ article {
   max-width: var(--width--container);
 }
 
-aside {
-  background: var(--lighterGreen);
-}
 aside .container {
   padding: 1.5rem;
 }
@@ -266,10 +244,8 @@ header p {
   }
 }
 nav {
-  --anchor: var(--darkGrey);
-  --main: var(--white);
   grid-area: nav;
-  background-color: var(--navColor);
+  background-color: var(--nav-color);
 }
 nav ul {
   margin: 0;
@@ -295,7 +271,7 @@ nav ul li {
   margin: 0.35em;
   padding: 0.3em 0.5em;
   background-color: var(--main);
-  color: var(--white);
+  color: var(--light);
   border-radius: var(--border-radius);
   font-size: 1em;
   box-shadow: var(--level-3);
@@ -333,6 +309,7 @@ nav ul li {
 }
 
 #styles {
+  background: var(--lighterGreen);
   grid-area: aside1;
   padding-bottom: var(--size-700);
 }
@@ -348,6 +325,7 @@ nav ul li {
 }
 
 .profile {
+  background: var(--lighterGreen);
   grid-area: aside2;
 }
 .profile .container {
@@ -374,7 +352,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 a:not([class]):hover {
-  color: var(--main);
+  color: var(--anchor-hover);
   border-bottom: none;
   transition: transform 200ms ease 0s;
 }
@@ -382,7 +360,7 @@ a:not([class]):hover {
 a[class] {
   padding: 0.3em 1em;
   background: var(--main);
-  color: var(--white);
+  color: var(--light);
   border-radius: var(--border-radius);
   display: inline-flex;
   align-items: center;
@@ -397,6 +375,12 @@ a[class]:hover {
   transform: scale(1.05);
 }
 
+header a:not([class]):hover,
+main a:not([class]):hover,
+footer a:not([class]):hover {
+  --anchor-hover: var(--darkerPink);
+}
+
 .skip-link {
   --main: hsla(0, 0%, 100%, 0.2);
   position: absolute;
@@ -408,12 +392,20 @@ a[class]:hover {
   }
 }
 
+aside#styles .container ul + a {
+  --light: var(--darkGrey);
+  background: inherit;
+  border: 1px solid black;
+  border-bottom: solid 2px var(--anchor);
+}
+
 aside.profile .container ul + a {
   padding: 0.3rem 1rem;
   display: inline-block;
-  background: var(--main);
-  color: var(--white);
+  background: inherit;
   border-radius: var(--border-radius);
+  border: 1px solid black;
+  border-bottom: solid 2px var(--anchor);
   text-decoration: none;
   transition: all 0.3s ease 0s;
 }
@@ -421,16 +413,9 @@ aside.profile .container ul + a:after {
   background: none;
 }
 aside.profile .container ul + a:hover {
-  background: var(--main);
-  color: var(--white);
-  border-bottom: solid 2px var(--anchor);
+  --anchor-hover: var(--darkGrey);
   box-shadow: var(--level-3);
   transform: scale(1.05);
-}
-
-aside.profile .container a:not([class]):hover,
-aside#styles .container a:not([class]):hover {
-  color: var(--white);
 }
 
 .link-github svg {

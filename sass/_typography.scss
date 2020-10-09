@@ -27,23 +27,6 @@ h4 {
   font-size: var(--font-size-h4);
 }
 
-header a,
-nav a,
-main a,
-aside a,
-footer a {
-  text-decoration: none;
-  color: var(--darkGrey);
-  border-bottom: solid 2px var(--anchor);
-  transition: all 0.3s ease-in-out;
-
-  &:not([class]):hover {
-    color: var(--main);
-    border-bottom: none;
-    transition: transform 200ms ease 0s;
-  }
-}
-
 header h2 {
   font-size: calc(var(--font-size-h2) * 0.8);
 }
